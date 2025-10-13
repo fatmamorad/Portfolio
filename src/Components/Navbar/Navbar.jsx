@@ -9,7 +9,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="w-full fixed top-0 left-0 right-0 bg-purple-200/40 backdrop-blur-md  border-gray-200 dark:bg-gray-900">
+      <nav className="w-full fixed top-0 left-0 right-0 bg-purple-200/40 backdrop-blur-md  border-gray-200 ">
         <div className="w-3/4 mx-auto">
           <div className=" flex flex-wrap items-center justify-between mx-auto ">
             <NavLink to="/" className="">
@@ -18,7 +18,7 @@ function Navbar() {
             <button
               data-collapse-toggle="navbar-default"
               type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
               aria-controls="navbar-default"
               aria-expanded="false"
             >
@@ -43,14 +43,14 @@ function Navbar() {
               className="hidden w-full md:block md:w-auto"
               id="navbar-default"
             >
-              <ul className=" md:bg-transparent bg-white font-medium flex flex-col p-4 md:p-0  borderrounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <ul className=" md:bg-transparent bg-white font-medium flex flex-col p-4 md:p-0  borderrounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   ">
                 <li className="flex-row justify-center items-center text-purple-400"> 
                   <p className="text-center">
                   <i className="fa fa-home "></i>
                   </p>
                   <NavLink
                     to="/"
-                    className="block py-2 px-3 rounded-sm md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500"
+                    className="block py-2 px-3 rounded-sm md:bg-transparent md:p-0 "
                     aria-current="page"
                   > 
                 
@@ -63,7 +63,7 @@ function Navbar() {
                   </p>
                   <NavLink
                     to="/"
-                    className="block py-2 px-3rounded-sm md:p-0 dark:text-white md:dark:text-blue-500"
+                    className="block py-2 px-3rounded-sm md:p-0 "
                     aria-current="page"
                   > 
                 
@@ -76,7 +76,7 @@ function Navbar() {
                   </p>
                   <NavLink
                     to="/"
-                    className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                    className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 "
                     aria-current="page"
                   > 
                 
@@ -89,7 +89,7 @@ function Navbar() {
                   </p>
                   <NavLink
                     to="/"
-                    className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                    className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0"
                     aria-current="page"
                   > 
                 
@@ -101,7 +101,7 @@ Projects                  </NavLink>
                   </p>
                   <NavLink
                     to="/"
-                    className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                    className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 "
                     aria-current="page"
                   > 
                 

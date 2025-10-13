@@ -1,17 +1,17 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer' // استخدام الـ hook الصحيح
+import { useInView } from 'react-intersection-observer' 
 
 function AbouMe() {
     const skills=["HTML","CSS","JS","BootStarp","TypeScript","Next.js","ShadCN UI","React.js","Tailwind CSS","GitHub"]
-  // نستخدم الـ hook الخاص بـ react-intersection-observer
+  
   const { ref, inView } = useInView({
     triggerOnce:true,
-    threshold: 0.05,     // لما يظهر 10% من العنصر
+    threshold: 0.1,     
   })
   const { ref:ref1, inView:inView1} = useInView({
      triggerOnce:true,
-    threshold: 0.1,     // لما يظهر 10% من العنصر
+    threshold: 0.1,     
   })
 
   return (

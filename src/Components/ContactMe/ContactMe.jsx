@@ -15,7 +15,7 @@ function ContactMe() {
           <div className='w-3/4 mx-auto '>
             <div className='grid grid-cols-12'>
                 <div className='col-span-6'>
-                       <div class="text-sm font-normal text-purple-950 flex items-center w-fit px-2  my-4   text-gray-500 bg-white rounded-lg shadow-sm dark:text-gray-400 dark:bg-gray-800">
+                       <div class="text-sm font-normal text-purple-950 flex items-center w-fit px-2  my-4   bg-white rounded-lg shadow-sm ">
                   
                   <i className='fa fa-phone fa-sm me-2'></i>  Contact
 

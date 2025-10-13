@@ -12,7 +12,7 @@ function Home() {
           <div className="flex ">
             <div className="">
               <div>
-                <div class="flex items-center w-fit px-2  my-4   text-gray-500 bg-white rounded-lg shadow-sm dark:text-gray-400 dark:bg-gray-800">
+                <div class="flex items-center w-fit px-2  my-4   text-gray-500 bg-white rounded-lg shadow-sm ">
                   <div class="inline-flex items-center justify-center shrink-0 w-8 h-8 text-purple-950  rounded-lg dark:bg-blue-800 dark:text-blue-200">
                     <svg
                       class="w-4 h-4"
@@ -42,19 +42,19 @@ function Home() {
                   Buildeing Modern Web Applications
                 </p>
                 <div className="my-2 grid grid-cols-12 gap-2">
-                  <kbd class="col-span-5 md:col-span-2 px-2 py-1.5 text-xs font-semibold text-purple-950 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500 me-1">
+                  <kbd class="col-span-5 md:col-span-2 px-2 py-1.5 text-xs font-semibold text-purple-950 bg-gray-100 border border-gray-200 rounded-lg me-1">
                     HTML5
                   </kbd>
-                  <kbd class="col-span-5 md:col-span-2 px-2 py-1.5 text-xs font-semibold text-purple-950 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500 me-1">
+                  <kbd class="col-span-5 md:col-span-2 px-2 py-1.5 text-xs font-semibold text-purple-950 bg-gray-100 border border-gray-200 rounded-lg me-1">
                     CSS3
                   </kbd>
-                  <kbd class="col-span-5 md:col-span-2 px-2 py-1.5 text-xs font-semibold text-purple-950 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500 me-1">
+                  <kbd class="col-span-5 md:col-span-2 px-2 py-1.5 text-xs font-semibold text-purple-950 bg-gray-100 border border-gray-200 rounded-lg me-1">
                     JS
                   </kbd>
-                  <kbd class="col-span-5 md:col-span-2 px-2 py-1.5 text-xs font-semibold text-purple-950 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500 me-1">
+                  <kbd class="col-span-5 md:col-span-2 px-2 py-1.5 text-xs font-semibold text-purple-950 bg-gray-100 border border-gray-200 rounded-lg me-1">
                     Bootstarp
                   </kbd>
-                  <kbd class="col-span-5 md:col-span-2 px-2 py-1.5 text-xs font-semibold text-purple-950 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500 me-1">
+                  <kbd class="col-span-5 md:col-span-2 px-2 py-1.5 text-xs font-semibold text-purple-950 bg-gray-100 border border-gray-200 rounded-lg me-1">
                     ReactJs
                   </kbd>
                 </div>
