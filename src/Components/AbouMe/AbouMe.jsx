@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer' 
 
 function AbouMe() {
-    const skills=["HTML","CSS","JS","BootStarp","TypeScript","Next.js","ShadCN UI","React.js","Tailwind CSS","GitHub"]
+  const skills=["HTML","CSS","JS","BootStarp","TypeScript","Next.js","ShadCN UI","React.js","Tailwind CSS","GitHub"]
   
   const { ref, inView } = useInView({
     triggerOnce:true,
@@ -11,7 +11,7 @@ function AbouMe() {
   })
   const { ref:ref1, inView:inView1} = useInView({
      triggerOnce:true,
-    threshold: 0.1,     
+    threshold: 0.1,    
   })
 
   return (

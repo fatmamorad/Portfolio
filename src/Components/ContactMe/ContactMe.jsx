@@ -1,30 +1,58 @@
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import { useFormik } from 'formik'
 import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import{z} from 'zod'
 
+import { zodResolver } from '@hookform/resolvers/zod';
 function ContactMe() {
     const [Email,setEmail]=useState(false)
+    const [Phone,setPhone]=useState(false)
+    const scheme=z.object({
+    name:z.string().nonempty("Name is required").min(3,"Name must be at least 3 characters"),
+    email:z.email().nonempty("Email is required").regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/,"Please enter valid email"),
+    message:z.string().nonempty("Message is required"),
+   })
     function copyEmail(email){
-       setEmail(true)
        navigator.clipboard.writeText(email).then(()=>{
            setEmail(true)
            setTimeout(()=>setEmail(false),2000)
        })
     }
+    const {register,handleSubmit,formState:{errors}}=useForm({
+    defaultValues:{
+    "name": "",
+    "email":"",
+    "message":"",
+    },
+    resolver:zodResolver(scheme)
+   })
+    function copyPhone(email){
+      
+       navigator.clipboard.writeText(email).then(()=>{
+           setPhone(true)
+           setTimeout(()=>setPhone(false),2000)
+       })
+    }
+    function sendMail(values){
+        console.log(120,values)
+
+    }
         return (
         <>
-          <div className='w-3/4 mx-auto '>
-            <div className='grid grid-cols-12'>
-                <div className='col-span-6'>
+        
+            <div className='grid p-10 grid-cols-12 gap-2 my'>
+                <div className='md:col-span-6 col-span-12 p-6 bg-purple-200/30 backdrop-blur-2xl shadow-lg rounded-2xl'>
                        <div class="text-sm font-normal text-purple-950 flex items-center w-fit px-2  my-4   bg-white rounded-lg shadow-sm ">
                   
                   <i className='fa fa-phone fa-sm me-2'></i>  Contact
 
                   
                 </div>
-                <p className='text-purple-950 text-2xl font-bold'>Let’s build something great.</p>
-                <p className='text-purple-950 my-2'>I usually reply within 24h.</p>
+                <p className='text-purple-950 md:text-2xl text-sm font-bold'>Let’s build something great.</p>
+                <p className='text-purple-950 my-2 md:text-sm text-xs'>I usually reply within 24h.</p>
                 <div className='my-2 ms-2'>
-                    <div className='flex  items-center justify-between w-3/4'> 
+                    <div className='flex  items-center justify-between w-full md:w-3/4'> 
                         <p className='text-s text-gray-500'>Email</p>
                         {
                             Email?
@@ -33,14 +61,49 @@ function ContactMe() {
                         }
                         
                     </div>
-                   <input  type='text' value="fm5130357@gmail.com" readOnly disabled></input>
+                   <input  type='text' className=' text-xs md:text-mds' value="fm5130357@gmail.com" readOnly disabled></input>
+                </div>
+                 <div className='my-2 ms-2'>
+                    <div className='flex  w-full md:w-3/4 items-center justify-between'> 
+                        <p className='text-s text-gray-500'>Phone</p>
+                        {
+                            Phone?
+                            <p className='text-s bg-gray-300 rounded-2xl  px-2 py-1'>!Copied</p>:
+                            <p  onClick={()=>copyPhone("01005230670")} className='text-s bg-gray-300 rounded-2xl  px-2 py-1'><i className='fa fa-copy'></i></p>
+                        }
+                        
+                    </div>
+                   <input  type='text'className=' text-xs md:text-mds'  value="01005230670" readOnly disabled></input>
+                </div>
+                 <div className='my-2 ms-2'>
+    
+                        <p className='text-s text-gray-500'>Location</p>
+                        <p className=' text-xs md:text-md'>Qalyubia,El-Khanka</p>
+                   
                 </div>
                 </div>
-                <div className='col-span-6'>
-                    
+                    <div className='md:col-span-6 p-6 col-span-12   shadow-md rounded-2xl '>
+                         <form onSubmit={handleSubmit(sendMail)}>
+                            <div>
+                               <label htmlFor='name' className='text-sm text-purple-950'>Your Name</label>
+                               <input id="name"  name='name' type="text" {...register('name')} placeholder='ex: Fatma Mourad' className='w-full py-1 px-3 border-1 mt-1 border-gray-500 rounded-2xl'></input>
+
+                            </div>
+                              <div className='my-2'>
+                               <label htmlFor='email' className='text-sm text-purple-950'>Email</label>
+                               <input id="email"  name='email' type="text" {...register('email')} placeholder='ex:Fatma120@gmail.com' className='w-full py-1 px-3 border-1 mt-1 border-gray-500 rounded-2xl'></input>
+                            </div>
+
+                            <div className='my-2'>
+                               <label htmlFor='message' className='text-sm text-purple-950'>Message</label>
+                               <textarea id="message"  name='message' type="text" {...register('message')} placeholder='Message' className='w-full py-1 px-3 border-1 mt-1 border-gray-500 rounded-2xl'></textarea>
+                            </div>
+                              <input  name='message' type="text" {...register('message')} className=''></input>
+                              <button type='submit' className='p-1 bg-red-500 w-full rounded-2xl'>sub</button>
+                         </form>
                 </div>
             </div>
-          </div>
+         
         </>
     )
 }
