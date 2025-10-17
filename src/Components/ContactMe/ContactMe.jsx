@@ -57,7 +57,7 @@ function ContactMe() {
             <p className=' text-3xl lg:text-5xl  text-center text-purple-950 font-bold'>Contact Me</p>
             <div className='grid p-10 grid-cols-12 gap-2 my'>
                
-                <div className='md:col-span-6 col-span-12 p-6 bg-purple-200/30 backdrop-blur-2xl shadow-lg rounded-2xl'>
+                <div className='md:col-span-6 col-span-12 p-2 bg-purple-200/30 backdrop-blur-2xl shadow-lg rounded-2xl'>
                        <div class="text-sm font-normal text-purple-950 flex items-center w-fit px-2  my-4   bg-white rounded-lg shadow-sm ">
                   
                   <i className='fa fa-phone fa-sm me-2'></i>  Contact
