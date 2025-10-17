@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/Images/fatmLogo.png";
 import { initFlowbite } from "flowbite";
+import { Link } from "react-scroll";
 function Navbar() {
   useEffect(() => {
     initFlowbite();
@@ -9,12 +10,12 @@ function Navbar() {
 
   return (
     <>
-      <nav className="w-full fixed top-0 left-0 right-0 bg-purple-200/40 backdrop-blur-md  border-gray-200 ">
+      <nav className="w-full fixed top-0 left-0 right-0 bg-purple-200/40 backdrop-blur-md  z-50 border-gray-200 ">
         <div className="w-3/4 mx-auto">
           <div className=" flex flex-wrap items-center justify-between mx-auto ">
-            <NavLink to="/" className="">
+            <a href="/" className="">
               <img src={logo} className="h-15  mt-0 mb-0" alt="Flowbite Logo" />
-            </NavLink>
+            </a>
             <button
               data-collapse-toggle="navbar-default"
               type="button"
@@ -43,70 +44,80 @@ function Navbar() {
               className="hidden w-full md:block md:w-auto"
               id="navbar-default"
             >
-              <ul className=" md:bg-transparent bg-white font-medium flex flex-col p-4 md:p-0  borderrounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   ">
-                <li className="flex-row justify-center items-center text-purple-400"> 
-                  <p className="text-center">
-                  <i className="fa fa-home "></i>
-                  </p>
-                  <NavLink
-                    to="/"
+              <ul className=" md:bg-transparent bg-white rounded-2xl mb-3 font-medium  justify-center items-center flex flex-col p-4 md:p-0  borderrounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0   ">
+                <li className="flex-row justify-center items-center ">
+                 
+                  <Link
+                    to="home"
+                    activeClass="active"
+                    smooth={true}
+                    duration={500}
+                    offset={-50}
+                    spy={true}
                     className="block py-2 px-3 rounded-sm md:bg-transparent md:p-0 "
                     aria-current="page"
-                  > 
-                
-                    Home
-                  </NavLink>
-                </li>
-                 <li className="flex-row justify-center  text-purple-400 items-center"> 
-                  <p className="text-center">
-                  <i className="fa-solid fa-user-circle "></i>
+                  >
+                     <p className="text-center hidden md:block">
+                    <i className="fa fa-home "></i>
                   </p>
-                  <NavLink
-                    to="/"
+                    Home
+
+                  </Link>
+                </li>
+                <li className="flex-row justify-center   items-center">
+                 
+                  <Link
+                  activeClass="active"
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    spy={true}
+                   to="about"
+                    
                     className="block py-2 px-3rounded-sm md:p-0 "
                     aria-current="page"
-                  > 
-                
+                  >
+                     <p className="text-center  hidden md:block">
+                    <i className="fa-solid fa-user-circle "></i>
+                  </p>
                     About Me
-                  </NavLink>
+                  </Link>
                 </li>
-                 <li className="flex-row justify-center items-center"> 
-                  <p className="text-center">
-                 <i class="fa-solid fa-screwdriver-wrench"></i>
-                  </p>
-                  <NavLink
-                    to="/"
-                    className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 "
+
+                <li className="flex-row justify-center items-center">
+                  <Link
+                  activeClass="active"
+                    to="projects"
+                     smooth={true}
+                    duration={500}
+                    spy={true}
+                    offset={-80}
+                    className="block py-2 px-3rounded-sm md:bg-transparent  md:p-0"
                     aria-current="page"
-                  > 
-                
-                    Skills
-                  </NavLink>
+                  >
+                    <p className="text-center  hidden md:block">
+                    <i class="fa-solid fa-laptop-code"></i>
+                  </p>
+                    Projects
+                  </Link>
                 </li>
-                 <li className="flex-row justify-center items-center"> 
-                  <p className="text-center">
-                  <i class="fa-solid fa-laptop-code"></i>
-                  </p>
-                  <NavLink
-                    to="/"
-                    className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0"
+                <li className="flex-row justify-center items-center">
+                 
+                  <Link
+                    activeClass="active"
+                    to="contact"
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    spy={true}
+                    className="block py-2 px-3 rounded-sm md:bg-transparent md:p-0 "
                     aria-current="page"
-                  > 
-                
-Projects                  </NavLink>
-                </li>
-                 <li className="flex-row justify-center items-center"> 
-                  <p className="text-center">
-                  <i class="fa-solid fa-phone"></i>
+                  >
+                     <p className="text-center  hidden md:block">
+                    <i class="fa-solid fa-phone"></i>
                   </p>
-                  <NavLink
-                    to="/"
-                    className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 "
-                    aria-current="page"
-                  > 
-                
                     Contact Me
-                  </NavLink>
+                  </Link>
                 </li>
               </ul>
             </div>

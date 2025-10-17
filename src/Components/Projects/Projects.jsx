@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-// الصور
 import port from "../../assets/Images/portifloo.png";
 import post from "../../assets/Images/PostApp.png";
 import expense from "../../assets/Images/expense.png";
@@ -61,11 +60,18 @@ function Projects() {
       projectImg: weather,
       githubUrl: "https://github.com/fatmamorad/Weather-App",
     },
+    {
+      id: 8,
+      demoUrl: "https://portfolio-lime-three-79.vercel.app/",
+      desc: "Weather App using HTML, CSS, JS. Users search for a city and get live weather info. Clean & intuitive UI.",
+      projectImg: weather,
+      githubUrl: "https://github.com/fatmamorad/Portfolio",
+    },
   ];
 
   return (
-    <div className="my-20 px-4">
-      <h2 className="text-purple-950  text-center text-3xl md:text-4xl font-bold mb-10">Projects</h2>
+    <div className="my-20 px-4" id='projects'>
+      <p className="text-purple-950  text-center text-3xl lg:text-5xl font-bold mb-10">Projects</p>
     <div className="grid grid-cols-12 gap-5">
         {projects.map((item) => (
           <div className="col-span-12 sm:col-span-6 md:col-span-4">

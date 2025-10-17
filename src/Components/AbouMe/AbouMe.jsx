@@ -16,8 +16,8 @@ function AbouMe() {
 
   return (
     <>
-    <div>
-        <p className=' text-5xl text-center text-purple-950 font-mono'>About Me</p>
+    <div id='about' className='my-20 px-4 '>
+        <p className=' text-3xl lg:text-5xl text-center text-purple-950 font-bold'>About Me</p>
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
@@ -76,7 +76,7 @@ function AbouMe() {
         initial={{ opacity: 0, x: -50 }}
         animate={inView1 ? { opacity: 1, x: 0 } : {}} 
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className='md:col-span-3 col-span-6 md:text-lg text-sm p-2 bg-purple-200 mt-2 rounded-2xl w-full '>
+        className='lg:col-span-4 col-span-6 md:text-lg text-sm p-2 bg-purple-200 mt-2 rounded-2xl w-full '>
             {item}
          </motion.p>
      )}

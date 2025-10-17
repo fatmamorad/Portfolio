@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/* From Uiverse.io by Navarog21 */ 
+body{margin: 0; padding:0;box-sizing: border-box;}
 .btn-custom {
   width: 10em;
   position: relative;
@@ -26,7 +26,9 @@
   transition: 0.5s;
   transform-origin: center;
 }
-
+.active{
+  color: purple;
+}
 .btn-custom::before {
   content: "";
   transform-origin: center;

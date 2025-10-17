@@ -7,6 +7,7 @@ import{z} from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod';
 function ContactMe() {
     const [Email,setEmail]=useState(false)
+    const [Loading,setLoading]=useState(false)
     const [Phone,setPhone]=useState(false)
     const scheme=z.object({
     name:z.string().nonempty("Name is required").min(3,"Name must be at least 3 characters"),
@@ -34,14 +35,28 @@ function ContactMe() {
            setTimeout(()=>setPhone(false),2000)
        })
     }
-    function sendMail(values){
-        console.log(120,values)
+    async function sendMail(values){
+     setLoading(true)
+    const res = await fetch("https://formsubmit.co/ajax/fm5130357@gmail.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    });
 
+    const data = await res.json();
+    setLoading(false)
+    console.log(data);
+    if(data.success){
+        console.log(150)
+    }
+    
     }
         return (
         <>
-        
+           <div  id='contact' className='my-20 px-4'>
+            <p className=' text-3xl lg:text-5xl  text-center text-purple-950 font-bold'>Contact Me</p>
             <div className='grid p-10 grid-cols-12 gap-2 my'>
+               
                 <div className='md:col-span-6 col-span-12 p-6 bg-purple-200/30 backdrop-blur-2xl shadow-lg rounded-2xl'>
                        <div class="text-sm font-normal text-purple-950 flex items-center w-fit px-2  my-4   bg-white rounded-lg shadow-sm ">
                   
@@ -87,21 +102,25 @@ function ContactMe() {
                             <div>
                                <label htmlFor='name' className='text-sm text-purple-950'>Your Name</label>
                                <input id="name"  name='name' type="text" {...register('name')} placeholder='ex: Fatma Mourad' className='w-full py-1 px-3 border-1 mt-1 border-gray-500 rounded-2xl'></input>
-
+                               {errors.name&&<p className='text-sm text-red-600 ms-5'>{errors.name.message}</p>}
                             </div>
                               <div className='my-2'>
                                <label htmlFor='email' className='text-sm text-purple-950'>Email</label>
                                <input id="email"  name='email' type="text" {...register('email')} placeholder='ex:Fatma120@gmail.com' className='w-full py-1 px-3 border-1 mt-1 border-gray-500 rounded-2xl'></input>
+                                {errors.email&&<p className='text-sm text-red-600 ms-5'>{errors.email.message}</p>}
                             </div>
 
                             <div className='my-2'>
                                <label htmlFor='message' className='text-sm text-purple-950'>Message</label>
                                <textarea id="message"  name='message' type="text" {...register('message')} placeholder='Message' className='w-full py-1 px-3 border-1 mt-1 border-gray-500 rounded-2xl'></textarea>
+                                {errors.message&&<p className='text-sm text-red-600 ms-5'>{errors.message.message}</p>}
                             </div>
-                              <input  name='message' type="text" {...register('message')} className=''></input>
-                              <button type='submit' className='p-1 bg-red-500 w-full rounded-2xl'>sub</button>
+            { !Loading?<button type='submit' className='p-1 bg-purple-800/50 red-500 w-full rounded-2xl'>Send Message</button>:
+            <button  className='p-1 bg-purple-800/50 red-500 w-full rounded-2xl cursor-none'><i className='fa-solid fa-spinner fa-spin'></i></button>}
+                              
                          </form>
                 </div>
+            </div>
             </div>
          
         </>
