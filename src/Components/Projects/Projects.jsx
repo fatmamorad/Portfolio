@@ -8,6 +8,7 @@ import game from '../../assets/Images/game.png';
 import hung from '../../assets/Images/hung.png';
 import weather from '../../assets/Images/weathrer.png';
 import firstReact from '../../assets/Images/firstReact.png';
+import portflio from '../../assets/Images/portifloo.png'
 
 function Projects() {
   const projects = [
@@ -63,8 +64,8 @@ function Projects() {
     {
       id: 8,
       demoUrl: "https://portfolio-lime-three-79.vercel.app/",
-      desc: "Weather App using HTML, CSS, JS. Users search for a city and get live weather info. Clean & intuitive UI.",
-      projectImg: weather,
+     desc: "Responsive personal portfolio built with React. Features smooth scrolling, modern design, and project showcase.",
+      projectImg: portflio,
       githubUrl: "https://github.com/fatmamorad/Portfolio",
     },
   ];

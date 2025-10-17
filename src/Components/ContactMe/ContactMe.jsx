@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import{z} from 'zod'
 
 import { zodResolver } from '@hookform/resolvers/zod';
+import toast from 'react-hot-toast'
 function ContactMe() {
     const [Email,setEmail]=useState(false)
     const [Loading,setLoading]=useState(false)
@@ -46,8 +47,9 @@ function ContactMe() {
     const data = await res.json();
     setLoading(false)
     console.log(data);
-    if(data.success){
+    if(data.success=='true'){
         console.log(150)
+        toast.success("Message sent Successfully",{position:'top-center'})
     }
     
     }

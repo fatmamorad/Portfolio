@@ -5,6 +5,7 @@ import './App.css'
 import Layout from './Components/Layout/Layout';
 import { RouterProvider } from 'react-router-dom';
 import Home from './Components/Home/Home';
+import { Toaster } from 'react-hot-toast';
 const routes = createBrowserRouter([
   { path: "/", element: <Layout/>,children:[
     {index:true, element: <Home/>}
@@ -17,7 +18,11 @@ function App() {
   return (
     <>
     <div className=''>
-       <RouterProvider router={routes}/>  
+      
+      <Toaster/>
+       <RouterProvider router={routes}>
+         
+        </RouterProvider> 
        </div>
     </>
   )
